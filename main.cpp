@@ -1,8 +1,14 @@
 #ifdef _WIN32
+#define NOMINMAX
 #include <windows.h>
 #include <ctime>
 #include <direct.h>
+#include "win32_dirent.h"
+#define access _access
+#else
+#include <dirent.h>
 #endif
+
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -10,8 +16,6 @@
 #include <math.h>
 
 #include <sys/types.h>
-#include <dirent.h>
-
 
 // Includes CUDA
 #include <cuda_runtime.h>

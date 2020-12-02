@@ -102,7 +102,7 @@ static void storePlyFileBinaryPointCloud (char* plyFilePath, PointCloudList &pc,
 
     //write data
 #pragma omp parallel for
-    for(size_t i = 0; i < pc.size; i++) {
+    for(long int i = 0; i < pc.size; i++) {
         const Point_li &p = pc.points[i];
 //        const float4 normal = p.normal;
         float4 X = p.coord;
